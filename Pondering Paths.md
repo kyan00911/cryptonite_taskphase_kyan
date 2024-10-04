@@ -115,7 +115,7 @@ pwn.college{kV1TKz_X8YrFCaJu0JAn-eDiBB2.dFTN1QDL1gDN1czW}
 
 # home sweet home
 
-~ returns an absolute path of the home directory, /home/hacker. Using this knowledge and the provided constraints, I ran /challenge/run with ~/~ as the argument which returns the path /home/hacker/~
+~ returns an absolute path of the home directory, /home/hacker. Using this knowledge and the provided constraints, I ran /challenge/run with `~/~` as the argument which returns the path /home/hacker/~
 ``` bash
 Connected!
 hacker@paths~home-sweet-home:~$ /challenge/run ~/~
