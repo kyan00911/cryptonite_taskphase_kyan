@@ -70,3 +70,56 @@ Correct!!!
 Here is your flag:
 pwn.college{opQZg0p7r30SJvAMJS-5M2Yo-8i.dhDN1QDL1gDN1czW}
 ```
+
+# implicit relative paths, from /
+
+This challenge introduces relative paths. The challenge was to use a relative path challenge/run with a cwd of root directory /. I changed the cd to / and then used the relative path to invoke the program
+``` bash
+Connected!
+hacker@paths~implicit-relative-paths-from-:~$ cd /
+hacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{QnHCLqJHIy4y4FGvDbNbrMG8Exi.dlDN1QDL1gDN1czW}
+```
+
+# explicit relative paths, from /
+
+This challenge introduces explicit paths. At first I tried to normally cd into / and then use the relative path, however it prompted me to use the '.' which refers to the same directory.
+``` bash
+Connected!
+hacker@paths~explicit-relative-paths-from-:~$ cd /
+hacker@paths~explicit-relative-paths-from-:/$ challenge/run
+Incorrect...
+This challenge must be called with a relative path that explicitly starts with a `.`!
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{QPXX6NPeETkk7hL080AECF18ZLN.dBTN1QDL1gDN1czW}
+```
+
+# implicit relative path
+
+This challenge demonstrated the usefulness of . as it explicitly tells the system to invoke the path. After changing cwd to /challenge I used ./run to invoke it
+``` bash
+Connected!
+hacker@paths~implicit-relative-path:~$ cd /challenge
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{kV1TKz_X8YrFCaJu0JAn-eDiBB2.dFTN1QDL1gDN1czW}
+```
+
+# home sweet home
+
+~ returns an absolute path of the home directory, /home/hacker. Using this knowledge and the provided constraints, I ran /challenge/run with ~/~ as the argument which returns the path /home/hacker/~
+``` bash
+Connected!
+hacker@paths~home-sweet-home:~$ /challenge/run ~/~
+Writing the file to /home/hacker/~!
+... and reading it back to you:
+pwn.college{gTGFd0LV6aBOu2OZXpGDdbBJAAx.dNzM4QDL1gDN1czW}
+```
