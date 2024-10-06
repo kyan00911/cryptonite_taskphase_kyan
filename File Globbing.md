@@ -31,3 +31,26 @@ hacker@globbing~matching-with-:/challenge/files$ /challenge/run file_[bash]
 You got it! Here is your flag!
 pwn.college{UKkoWnt5xjiwWsOnbZhshfEe1He.dNjM4QDL1gDN1czW}
 ```
+
+# Matching paths with []
+
+This is similar to the previous one except instead of first cd'ing into /challenge/files, I gave the entire path as an argument to glob using []
+``` bash
+Connected!
+hacker@globbing~matching-paths-with-:~$ /challenge/run /challenge/files/file_[bash]
+You got it! Here is your flag!
+pwn.college{UfaZt3MSD0BZk7Pnq-lm7lZEgZB.dRjM4QDL1gDN1czW}
+```
+
+# Mixing globs
+
+Combining knowledge of [] and * globs
+``` bash
+Connected!
+hacker@globbing~mixing-globs:~$ cd /challenge/files
+hacker@globbing~mixing-globs:/challenge/files$ /challenge/run l*
+Error: you did not use a square bracket glob...
+hacker@globbing~mixing-globs:/challenge/files$ /challenge/run [cep]*
+You got it! Here is your flag!
+pwn.college{kOBJTMwSJtN5gHYdJye4o9XYekw.dVjM4QDL1gDN1czW}
+```
