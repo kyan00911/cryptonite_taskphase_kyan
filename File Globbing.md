@@ -54,3 +54,15 @@ hacker@globbing~mixing-globs:/challenge/files$ /challenge/run [cep]*
 You got it! Here is your flag!
 pwn.college{kOBJTMwSJtN5gHYdJye4o9XYekw.dVjM4QDL1gDN1czW}
 ```
+
+
+# Exclusionary globbing
+
+Similar to the previous one, except this time we have to search for files which do NOT start with p,w,n using ^ or !.
+``` bash
+Connected!
+hacker@globbing~exclusionary-globbing:~$ cd /challenge/files
+hacker@globbing~exclusionary-globbing:/challenge/files$ /challenge/run [^pwn]*
+You got it! Here is your flag!
+pwn.college{Aavw-kqSYr1FdtEauUaak6iBMnI.dZjM4QDL1gDN1czW}
+```
