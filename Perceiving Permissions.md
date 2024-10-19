@@ -542,7 +542,7 @@ pwn.college{8z57T2T2tjgJ5a05p5jSd79IXrD.dNTM5QDL1gDN1czW}
 
 # The SUID bit
 
-In this challenge I used u+s to give sudo access to the program as owner, in order to get the flag
+In this challenge I used u+s to give suid bit access to the program as owner, in order to get the flag
 ``` bash
 hacker@permissions~the-suid-bit:~$ chmod u+s /challenge/getroot
 hacker@permissions~the-suid-bit:~$ cat /flag
